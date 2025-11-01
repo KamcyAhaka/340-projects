@@ -1,6 +1,195 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --accent-color: rgb(40, 12, 66);
+}
+
 /******* Change Box Model ***************/
 *,
 *:before,
 *:after {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+body {
+  font-family: "Noto Sans", serif;
+}
+
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+
+#top-header a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+.siteName {
+  font-size: clamp(28px, calc(28px + 1vw), 50px);
+  font-weight: bold;
+}
+
+.navigation-menu {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 1em 0;
+}
+
+.hero-section {
+  position: relative;
+  padding-block: 1.5em;
+}
+
+.hero-section h1 {
+  font-size: clamp(20px, calc(20px + 1vw), 30px);
+}
+
+.hero__img {
+  width: 100%;
+}
+
+.vehicle-features-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, .8);
+  padding-inline: .5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-size: clamp(16px, calc(16px + 1vw), 25px);
+  font-weight: bold;
+}
+
+.vehicle-features-container h2 {
+  font-size: clamp(18px, calc(18px + 1vw), 25px);
+}
+
+.review-section {
+  padding: 0 .5em;
+}
+
+.review-list {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.call-to-action {
+  border: none;
+  background-color: var(--accent-color);
+  padding: .75em .5em;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.upgrade-section {
+  padding: 0 .5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em
+}
+
+.upgrades-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: .5em;
+  row-gap: 2em;
+}
+
+.upgrade {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.upgrade__img-container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: var(--accent-color);
+  padding: 2em 0;
+}
+
+.upgrade img {
+  height: 30px; 
+}
+
+footer {
+  margin-top: auto;
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    padding: 0 1em;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+          "hero hero"
+          "upgrade review"
+    ;
+    /* grid-auto-rows: 300px; */
+  }
+
+  .hero-section {
+    grid-area: hero;
+    grid-column: span 2;
+  }
+
+  .hero-section picture {
+    display: block;
+    text-align: center;
+  }
+
+  .hero__img {
+    align-self: center;
+    max-width: 700px;
+  }
+
+  .vehicle-features-container {
+    left: 20%;
+  }
+
+  .upgrade-section {
+    grid-area: upgrade;
+    grid-column: 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .review-section {
+    grid-area: review;
+    grid-column: 2 / span 1;
+  }
+
+  .review-list {
+    gap: 2em;
+  }
+}
+
+footer {
+  padding-block: 1em;
 }
