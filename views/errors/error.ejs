@@ -1,0 +1,27 @@
+<div class="error-container">
+    <% if (title == 404) { %>
+        <div class="emoji">🔍</div>
+        <div class="error-code">404</div>
+        <h1>Page Not Found</h1>
+        <div class="funny-message">
+            "I searched everywhere, checked under the couch cushions, asked the cat... This page is definitely not here!"
+        </div>
+    <% } else if (title == 500) { %>
+        <div class="emoji">🔧</div>
+        <div class="error-code">500</div>
+        <h1>Server Error</h1>
+        <div class="funny-message">
+            "Our hamsters stopped running in their wheels. We're giving them some snacks and they'll be back soon!"
+        </div>
+    <% } else { %>
+        <div class="emoji">⚠️</div>
+        <div class="error-code"><%= title %></div>
+        <h1><%= title == 'Server Error' ? 'Server Error' : 'Error' %></h1>
+    <% } %>
+    
+    <div class="error-message">
+        <%- message %>
+    </div>
+
+    <a href="/" class="btn-home">Take Me Home</a>
+</div>
