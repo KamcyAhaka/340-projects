@@ -34,6 +34,10 @@ body {
   color: var(--accent-color);
 }
 
+#inv-display {
+  grid-column: span 2;
+}
+
 .siteName {
   font-size: clamp(28px, calc(28px + 1vw), 50px);
   font-weight: bold;
@@ -44,8 +48,12 @@ body {
   justify-content: space-around;
   list-style: none;
   background-color: var(--accent-color);
-  color: #fff;
   padding: 1em 0;
+}
+
+.navigation-menu a {
+  color: #fff;
+
 }
 
 .hero-section {
@@ -133,6 +141,14 @@ body {
   height: 30px; 
 }
 
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-top: auto;
+  margin-bottom: 1em;
+}
+
  .error-container {
     /* background: white; */
     /* border-radius: 20px; */
@@ -182,6 +198,7 @@ h1 {
     color: #333;
     font-size: 32px;
     margin-bottom: 20px;
+    grid-column: span 2;
 }
 
 .error-message {
