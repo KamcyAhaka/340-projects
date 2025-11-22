@@ -1,0 +1,66 @@
+:root {
+  --accent-color: rgb(40, 12, 66);
+}
+
+.center-title {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.form-container {
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--accent-color) / 0.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.input-container span {
+  font-size: 14px;
+  font-style: italic;
+  color: gray;
+}
+
+.show-password-btn {
+  position: absolute;
+  bottom: 3px;
+  height: 30px;
+  right: 2px;
+  border-radius: 0.25rem;
+  padding-inline: .5rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.input-container input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.submit-btn {
+  padding-block: 0.75rem;
+  border-radius: 0.75rem;
+  border: 0;
+  background: var(--accent-color);
+  color: white;
+  font-weight: 600;
+}
+
+.no-account {
+  text-align: center;
+}
