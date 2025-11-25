@@ -21,19 +21,19 @@
       <label for="account_firstname">
         First name:
       </label>
-      <input type="text" id="account_firstname" name="account_firstname" required />
+      <input type="text" id="account_firstname" name="account_firstname" value="<%= locals.account_firstname %>" required />
     </div>
     <div class="input-container">
       <label for="account_lastname">
         Last name:
       </label>
-      <input type="text" id="account_lastname" name="account_lastname" required />
+      <input type="text" id="account_lastname" name="account_lastname" value="<%= locals.account_lastname %>" required />
     </div>
     <div class="input-container">
       <label for="account_email">
         Email:
       </label>
-      <input type="email" name="account_email" required placeholder="Enter a valid email address">
+      <input type="email" name="account_email" required value="<%= locals.account_email %>" placeholder="Enter a valid email address">
     </div>
     <div class="input-container">
       <label for="account_password">
@@ -45,7 +45,7 @@
       required />
       <button class="show-password-btn">Show</button>
     </div>
-    <button type="submit" class="submit-btn">Login</button>
+    <button type="submit" class="submit-btn">Register</button>
   </form>
 
   <p class="no-account">

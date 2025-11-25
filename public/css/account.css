@@ -47,7 +47,7 @@ form {
   cursor: pointer;
 }
 
-.input-container input {
+.input-container input, .input-container select, .input-container textarea {
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
 }
@@ -59,6 +59,7 @@ form {
   background: var(--accent-color);
   color: white;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .no-account {

@@ -7,13 +7,23 @@
 
 <%- messages() %>
 
+<% if (errors) { %>
+  <ul class="notice">
+  <% errors.array().forEach(error => { %>
+    <li><%= error.msg %></li>
+  <%  }) %>
+  </ul>
+<% } %>
+
 <div class="form-container">
-  <form>
+  <form action="/account/login" method="POST" class="account-form">
     <div class="input-container">
       <label for="account_email">
         Email:
       </label>
-      <input type="email" name="account_email" required placeholder="Enter a valid email address">
+      <input type="email" name="account_email"
+      value="<%= locals.account_email %>"
+      required placeholder="Enter a valid email address">
     </div>
     <div class="input-container">
       <label for="account_password">
