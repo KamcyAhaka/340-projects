@@ -7,13 +7,35 @@
 
 <%- messages() %>
 
-<div class="inventory-management-links-container">
-  <div class="add-container add-classification-container">
-    <h2>Add Classification</h2>
-    <a href="/inv/add-classification">Add classification</a>
+<div class="inventory-management-container">
+  
+  <div class="inventory-management-links-container">
+    <div class="add-container add-classification-container">
+      <h2>Add Classification</h2>
+      <a href="/inv/add-classification">Add classification</a>
+    </div>
+    <div class="add-container add-inventory-container">
+      <h2>Add Inventory</h2>
+      <a href="/inv/add-inventory">Add inventory</a>
+    </div>
   </div>
-  <div class="add-container add-inventory-container">
-    <h2>Add Inventory</h2>
-    <a href="/inv/add-inventory">Add inventory</a>
+
+  <div class="center-title">
+    <h2>Manage Inventory</h2>
+  
+    <p>Select a classification from the list below</p>
+  
+    <div class="input-container">
+      <label for="classificationList">
+        Classification:
+      </label>
+      <%- classificationList %>
+    </div>
+
+    <table id="inventoryDisplay"></table>
+
+    <noscript>JavaScript must be enabled to use this page.</noscript>
   </div>
 </div>
+
+<script src="../../js/inventory.js"></script>
