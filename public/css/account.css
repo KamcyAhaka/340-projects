@@ -66,3 +66,13 @@ form {
 .no-account {
   text-align: center;
 }
+
+.inventory-management-container {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .inventory-management-container {
+    margin-top: 2rem;
+  }
+} 

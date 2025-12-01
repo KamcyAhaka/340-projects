@@ -30,11 +30,22 @@ body {
   justify-content: space-between;
   margin: 1em 0;
   padding-inline: 1rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 #top-header a {
   text-decoration: none;
   color: var(--accent-color);
+}
+
+#top-header .logout-link {
+  color: gray;
+}
+
+#top-header .account-name {
+  font-weight: 600;
 }
 
 #tools {
@@ -159,7 +170,7 @@ body {
   margin-bottom: 1em;
 }
 
- .error-container {
+.error-container {
     /* background: white; */
     /* border-radius: 20px; */
     /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); */
@@ -390,6 +401,10 @@ h1 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  #top-header {
+    flex-direction: column;
+  }
+
   .vehicle-detail {
     grid-template-columns: 1fr;
     gap: 1.5rem;
