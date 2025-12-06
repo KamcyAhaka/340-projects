@@ -36,9 +36,10 @@ async function getReviewsByAccountId(account_id) {
 async function getReviewById(review_id) {
   try {
     const data = await pool.query(
-      "SELECT * FROM public.review WHERE review_id = $1",
+      "SELECT r.*, i.inv_make, i.inv_model FROM public.review r JOIN public.inventory i ON r.inv_id = i.inv_id WHERE r.review_id = $1",
       [review_id]
     )
+
     return data.rows[0]
   } catch (error) {
     console.error("get review by id error " + error)

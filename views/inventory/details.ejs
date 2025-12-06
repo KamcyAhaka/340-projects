@@ -14,7 +14,7 @@
 <h2>Reviews</h2>
 
 <% if (locals.loggedin) { %>
-  <form action="/review/add" method="POST">
+  <form action="/review/add" method="POST" class="review-form">
     <fieldset>
       <label for="review_text">Add a Review</label>
       <textarea name="review_text" id="review_text" required></textarea>

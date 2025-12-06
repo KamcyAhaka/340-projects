@@ -61,6 +61,7 @@ invCont.buildByInventoryId = async function (req, res, next) {
     nav,
     view,
     reviews,
+    inv_id
   })
 }
 
