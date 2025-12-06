@@ -1,0 +1,24 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+<form action="/review/update" method="post">
+  <fieldset>
+    <label for="review_text">Review Text</label>
+    <textarea name="review_text" id="review_text" required><%= review.review_text %></textarea>
+    <input type="hidden" name="review_id" value="<%= review.review_id %>">
+    <button type="submit">Update Review</button>
+  </fieldset>
+</form>

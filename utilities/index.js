@@ -121,6 +121,47 @@ Util.buildDetailsView = function(vehicle) {
   return detailView;
 }
 
+/* **************************************
+* Build the review list HTML
+* ************************************ */
+Util.buildReviewList = async function(reviews) {
+  let reviewList = '<ul class="review-list">';
+  if (reviews && reviews.length > 0) {
+    reviews.forEach(review => {
+      reviewList += '<li class="review-item">';
+      reviewList += '<div class="review-header">';
+      reviewList += `<span class="reviewer-name">${review.account_firstname} ${review.account_lastname}</span>`;
+      reviewList += `<span class="review-date">${new Date(review.review_date).toLocaleDateString()}</span>`;
+      reviewList += '</div>';
+      reviewList += `<p class="review-text">${review.review_text}</p>`;
+      reviewList += '</li>';
+    });
+  } else {
+    reviewList += '<li class="no-reviews">Be the first to write a review!</li>';
+  }
+  reviewList += '</ul>';
+  return reviewList;
+}
+
+/* **************************************
+* Build the review list for the account view
+* ************************************ */
+Util.buildReviewListForAccount = async function(reviews) {
+  let reviewList = '<ul class="review-list-account">';
+  if (reviews && reviews.length > 0) {
+    reviews.forEach(review => {
+      reviewList += '<li class="review-item-account">';
+      reviewList += `<div class="review-details">Reviewed the ${review.inv_make} ${review.inv_model} on ${new Date(review.review_date).toLocaleDateString()}</div>`;
+      reviewList += `<div class="review-actions"><a href="/review/edit/${review.review_id}">Edit</a> | <a href="/review/delete/${review.review_id}">Delete</a></div>`;
+      reviewList += '</li>';
+    });
+  } else {
+    reviewList += '<li class="no-reviews">You have not written any reviews yet.</li>';
+  }
+  reviewList += '</ul>';
+  return reviewList;
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

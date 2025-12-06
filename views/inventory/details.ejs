@@ -8,3 +8,23 @@
 <%- messages() %>
 
 <%- view %>
+
+<hr>
+
+<h2>Reviews</h2>
+
+<% if (locals.loggedin) { %>
+  <form action="/review/add" method="post">
+    <fieldset>
+      <label for="review_text">Add a Review</label>
+      <textarea name="review_text" id="review_text" required></textarea>
+      <input type="hidden" name="inv_id" value="<%= locals.inv_id %>">
+      <input type="hidden" name="account_id" value="<%= locals.accountData.account_id %>">
+      <button type="submit">Add Review</button>
+    </fieldset>
+  </form>
+<% } else { %>
+  <p>You must be <a href="/account/login">logged in</a> to add a review.</p>
+<% } %>
+    
+<%- reviews %>

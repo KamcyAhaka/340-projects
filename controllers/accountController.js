@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken")
 require("dotenv").config()
 const utilities = require("../utilities")
 const accountModel = require("../models/account-model")
+const reviewModel = require("../models/review-model")
 const bcrypt = require("bcryptjs")
 
 /* ****************************************
@@ -9,9 +10,12 @@ const bcrypt = require("bcryptjs")
 * *************************************** */
 async function buildAccount(req, res, next) {
   let nav = await utilities.getNav()
+  const reviews = await reviewModel.getReviewsByAccountId(res.locals.accountData.account_id)
+  const reviewList = utilities.buildReviewListForAccount(reviews)
   res.render("account/index", {
     title: "Account Management",
     nav,
+    reviews: reviewList,
     errors: null,
   })
 }
