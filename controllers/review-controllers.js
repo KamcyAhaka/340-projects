@@ -9,6 +9,12 @@ const reviewController = {}
 reviewController.addReview = async function (req, res, next) {
   const { review_text, inv_id, account_id } = req.body
 
+  console.log('Params: ', req.params);
+
+  console.log('review text: ', review_text);
+  console.log('Inv id: ', inv_id);
+  console.log('account id: ', account_id);
+
   const addResult = await reviewModel.addReview(
     review_text,
     inv_id,

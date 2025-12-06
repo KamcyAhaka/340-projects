@@ -11,7 +11,7 @@ const bcrypt = require("bcryptjs")
 async function buildAccount(req, res, next) {
   let nav = await utilities.getNav()
   const reviews = await reviewModel.getReviewsByAccountId(res.locals.accountData.account_id)
-  const reviewList = utilities.buildReviewListForAccount(reviews)
+  const reviewList = await utilities.buildReviewListForAccount(reviews)
   res.render("account/index", {
     title: "Account Management",
     nav,
